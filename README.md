@@ -24,6 +24,11 @@ An end-to-end MLOps pipeline for detecting plant diseases from leaf images. This
 *   **Testing**: Locust (Load Testing)
 *   **Data**: PlantVillage Dataset (38 Classes)
 
+## 🌐 Live Demo
+
+*   **Web Dashboard**: [https://mlops.bwenge.rw/web/index.html](https://mlops.bwenge.rw/web/index.html)
+*   **API Documentation**: [https://mlops.bwenge.rw/docs](https://mlops.bwenge.rw/docs)
+
 ## 📂 Project Structure
 
 ```
