@@ -19,7 +19,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY api/ ./api/
 COPY web/ ./web/
 COPY models/ ./models/
-COPY src/ ./src/
 
 # Expose port
 EXPOSE 8000
