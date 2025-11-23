@@ -1,5 +1,8 @@
 // API Configuration
-const API_BASE_URL = 'http://localhost:8000';
+// Dynamically determine API URL based on where the frontend is served
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:8000'
+    : window.location.origin;
 
 // DOM Elements
 const fileInput = document.getElementById('file-input');
