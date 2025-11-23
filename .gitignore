@@ -19,12 +19,8 @@ venv/
 data/
 *.zip
 
-# Models
-models/checkpoints/
-models/final/
-*.h5
-*.keras
-*.tf
+models/logs
+models/**/variables
 
 # IDEs
 .vscode/

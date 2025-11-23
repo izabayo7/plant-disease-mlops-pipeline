@@ -1,0 +1,12 @@
+{
+  "IMG_SIZE": 224,
+  "BATCH_SIZE": 32,
+  "EPOCHS_PHASE1": 25,
+  "EPOCHS_PHASE2": 10,
+  "LEARNING_RATE_PHASE1": 0.001,
+  "LEARNING_RATE_PHASE2": 1e-05,
+  "NUM_CLASSES": 38,
+  "DATA_DIR": "../data",
+  "MODEL_DIR": "../models",
+  "VIZ_DIR": "../visualizations"
+}
