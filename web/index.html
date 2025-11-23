@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection - MLOps Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🌱 Plant Disease Detection System</h1>
+            <p class="subtitle">AI-Powered Crop Disease Identification | MLOps Pipeline</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <div class="nav-tab active" data-tab="prediction">Prediction</div>
+            <div class="nav-tab" data-tab="retraining">Retraining</div>
+            <div class="nav-tab" data-tab="dashboard">Dashboard</div>
+        </nav>
+
+        <!-- Monitoring Dashboard (Always Visible) -->
+        <section class="monitoring">
+            <h2>📊 System Monitoring</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>System Uptime</h3>
+                    <p class="metric-value" id="uptime">--</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Total Predictions</h3>
+                    <p class="metric-value" id="total-requests">--</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Avg Inference Time</h3>
+                    <p class="metric-value" id="avg-inference">--</p>
+                </div>
+                <div class="metric-card">
+                    <h3>CPU Usage</h3>
+                    <p class="metric-value" id="cpu-usage">--</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prediction Tab -->
+        <div id="prediction" class="tab-content active">
+            <section class="prediction">
+                <h2>🔍 Disease Prediction</h2>
+                
+                <div class="upload-area" id="upload-area">
+                    <input type="file" id="file-input" accept="image/*" multiple hidden>
+                    <div class="upload-prompt">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p>Click to upload or drag and drop</p>
+                        <p class="upload-hint">Upload leaf images (PNG, JPG)</p>
+                    </div>
+                </div>
+
+                <button id="predict-btn" class="btn btn-primary" disabled>Analyze Images</button>
+
+                <!-- Results -->
+                <div id="results" class="results hidden">
+                    <h3>Prediction Results</h3>
+                    <div id="results-container"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Retraining Tab -->
+        <div id="retraining" class="tab-content">
+            <section class="retraining">
+                <h2>🔄 Model Retraining Pipeline</h2>
+                
+                <div class="card">
+                    <h3>1. Upload New Labeled Data</h3>
+                    <form id="upload-data-form">
+                        <div class="form-group">
+                            <label for="retrain-label">Disease Label (Class Name)</label>
+                            <input type="text" id="retrain-label" placeholder="e.g., Tomato___healthy" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="retrain-file">Image File or ZIP Archive</label>
+                            <input type="file" id="retrain-file" accept="image/*,.zip" required>
+                            <p style="font-size: 0.85rem; color: #607d8b; margin-top: 0.5rem;">Upload a single image or a .zip file containing multiple images</p>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Upload Data</button>
+                    </form>
+                    <div id="upload-status" class="status-message hidden"></div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem;">
+                    <h3>2. Trigger Retraining</h3>
+                    <p>Start the fine-tuning process using all uploaded new data.</p>
+                    <button id="retrain-btn" class="btn btn-primary">Start Retraining Job</button>
+                    <div id="retrain-status" class="status-message hidden"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content">
+            <section class="dashboard">
+                <h2>📈 Analytics Dashboard</h2>
+                <div class="dashboard-grid">
+                    <div class="chart-container">
+                        <h3>Training Data Distribution</h3>
+                        <canvas id="trainChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>New Data Distribution</h3>
+                        <canvas id="newDataChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
