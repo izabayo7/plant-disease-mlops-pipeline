@@ -2,6 +2,10 @@
 
 An end-to-end MLOps pipeline for detecting plant diseases from leaf images. This project demonstrates a complete machine learning lifecycle, from data processing and model training to deployment, monitoring, and load testing.
 
+## 🎥 Video Demo
+
+[![Plant Disease MLOps: Dynamic Retraining & Deployment Demo](https://img.youtube.com/vi/3wPKWKfQpxA/0.jpg)](https://www.youtube.com/watch?v=3wPKWKfQpxA "Plant Disease MLOps: Dynamic Retraining & Deployment Demo")
+
 ## 🚀 Features
 
 *   **State-of-the-Art Model**: EfficientNetB0 with Transfer Learning (98%+ expected accuracy).
